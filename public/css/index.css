@@ -6,9 +6,10 @@
     background-color: #000;
     color: #fff;
     transition: all 0.5s ease;
-    border-radius: 20px;
+    border-radius: 20px 5px 0px 20px;
     padding: 10px;
     box-sizing: border-box;
+    float: left;
 }
 .menu ul {
     list-style: none;
@@ -57,6 +58,38 @@
     clear: left;
 }
 
+.chat-box {
+    display: block;
+    float: left;
+    position: absolute;
+    top: 626.5px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+textarea {
+    width: 1100px;
+    height: 60px;
+    font-size: 15px;
+    padding-left: 10px;
+    border-radius: 0px 5px 5px 0px;
+    color: white;
+    background-color: rgb(57, 57, 57);
+}
+button {
+    width: 100px;
+    height: 60px;
+    display: block;
+    float: left;
+    position: relative;
+    top: 626.5px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+    background-color: rgb(57, 57, 57);
+    border-radius: 0px 5px 5px 0px;
+    color: white;
+}
 
 .menu li:nth-child(1) a::before{ content: '\e88a'; }
 .menu li:nth-child(2) a::before{ content: '\ea77'; }
