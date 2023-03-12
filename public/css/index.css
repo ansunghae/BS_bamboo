@@ -58,24 +58,19 @@
     clear: left;
 }
 
-.chat-box {
+.chatbox {
     display: block;
-    float: left;
-    position: absolute;
-    top: 626.5px;
+    float: right;
     transition: all 0.5s ease;
     overflow: hidden;
 }
 
-textarea {
-    width: 1100px;
-    height: 60px;
-    font-size: 15px;
-    padding-left: 10px;
-    border-radius: 0px 5px 5px 0px;
-    color: white;
-    background-color: rgb(57, 57, 57);
+.user {
+    display: block;
+    float: right;
+    transition: hidden;
 }
+
 button {
     width: 100px;
     height: 60px;

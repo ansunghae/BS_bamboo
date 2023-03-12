@@ -8,9 +8,13 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/html/index.html')
 });
 
-app.get('/chat', (req, res) => {
-  res.sendFile(__dirname + '/public/html/chat.html')
-})
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/public/html/login.html')
+});
+
+app.get('/register', (req, res) => {
+  res.sendFile(__dirname + '/public/html/register.html')
+});
 
 app.listen(port , () => {
   console.log("Server Open at http://localhost:", port);

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>BS_Bamboo Register</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+<div class="menu">
+    <h2 style="margin: center; text-align: center;">Menu</h2>
+    <ul>
+        <li><a href="/" class="item"><div>Home</div></a></li>
+        <li><a href="/login" class="item"><div>Login</div></a></li>
+    </ul>
+</div>
+<form action="doJoin" method="POST" class="loginForm">                                                                                      
+    <h1>BS-Bamboo Register</h1>
+    <div class="textForm">
+        <input name="user_email" type="text" id="user_email" placeholder="이메일">
+    </div>
+    <div class="textForm">
+        <input name="user_ID" type="text" class="user_ID" placeholder="아이디">
+    </div>
+    <div class="textForm">
+        <input name="user_Password" type="password" id="user_Password" placeholder="비밀번호">
+    </div>
+    <div class="textForm">
+        <input name="Password_Check" type="password" id="Password_Check" placeholder="비밀번호 확인">
+    </div>
+
+    <input type="button" id="register" value="R E G I S T E R"/>
+    <div class="textform">
+        <h5 style="display: inline;">이미 계정이 있으신가요?</h5> <h5 style="color: blue; display: inline;"><a href="/login">로그인하기</a></h5>
+    </div>
+</form>
+
+<script>
+        var register = document.getElementById('register');
+        register.addEventListener('click', function() {
+            var user_Password = document.getElementById('user_Password').value;
+            var Password_Check = document.getElementById('Password_Check').value;
+            var user_ID = document.getElementsByClassName('user_ID')[0].value;
+            var user_email = document.getElementById('user_email').value;
+            if(user_Password.length < 7) {
+                alert("비밀번호는 7자리 이상이어야 합니다.");
+                return false;
+            }
+            if (user_Password != Password_Check) {
+                alert("비밀번호가 일치하지 않습니다.");
+                return false;
+            // Data Send 구현예정
+            // } else {
+            //     $.ajax(
+            //         {
+            //             url:`/api/cru?id=${user_ID}&pw=${user_Password}&email=${user_email}`,
+            //             success: function(data){
+            //                 console.log(data)
+            //                 window.open("/verify?email="+user_email)
+            //             }
+            //         }
+            //     )
+            //     return true;
+            }});
+</script>
+</body>
+</html>
