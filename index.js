@@ -3,6 +3,8 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
+const port = 80;
+
 app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 
@@ -28,6 +30,6 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(80, function() {
-    console.log('Listening on https://localhost:3000/')
+server.listen(port, () => {
+    console.log('Listening on https://localhost:3000/');
 });
