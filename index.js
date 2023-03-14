@@ -11,11 +11,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.sendFile(__dirname + '/public/html/login.html')
+  res.sendFile(__dirname + '/public/html/login.html');
 });
 
 app.get('/register', (req, res) => {
-  res.sendFile(__dirname + '/public/html/register.html')
+  res.sendFile(__dirname + '/public/html/register.html');
 });
 
 io.on('connection', (socket) => {
