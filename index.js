@@ -1,7 +1,9 @@
-const express = require('express');
-const app = express();
-const port = 80
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
+app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
@@ -16,6 +18,16 @@ app.get('/register', (req, res) => {
   res.sendFile(__dirname + '/public/html/register.html')
 });
 
-app.listen(port , () => {
-  console.log("Server Open at http://localhost:", port);
+io.on('connection', (socket) => {
+    socket.emit('usercount', io.engine.clientsCount);
+
+    socket.on('message', (msg) => {
+        console.log('Message Received : '+ msg);
+
+        io.emit('message', msg);
+    });
+});
+
+server.listen(80, function() {
+    console.log('Listening on https://localhost:3000/')
 });

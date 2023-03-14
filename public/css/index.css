@@ -71,20 +71,6 @@
     transition: hidden;
 }
 
-button {
-    width: 100px;
-    height: 60px;
-    display: block;
-    float: left;
-    position: relative;
-    top: 626.5px;
-    transition: all 0.5s ease;
-    overflow: hidden;
-
-    background-color: rgb(57, 57, 57);
-    border-radius: 0px 5px 5px 0px;
-    color: white;
-}
 
 .menu li:nth-child(1) a::before{ content: '\e88a'; }
 .menu li:nth-child(2) a::before{ content: '\ea77'; }
