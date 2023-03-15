@@ -11,4 +11,21 @@ register.addEventListener('click', function() {
     if (user_Password != Password_Check) {
         alert("비밀번호가 일치하지 않습니다.");
         return false;
+    } else {
+        $.ajax({
+            url : "/register",
+            type : "POST",
+            data : {
+                pw : user_Password,
+                id : user_ID,
+                email : user_email
+            },
+            success : function (data) {
+                if (data === "중복ID"){
+                    alert("이미 존재하는 아이디 입니다.");
+                } else if(data === "성공") {
+                    alert("회원가입이 정상적으로 완료되었습니다.");
+                }
+            }
+        })
     }});
